@@ -33,7 +33,7 @@ class Solution:
         # print(max_level, rotting_oranges, total_oranges)
         if rotting_oranges < total_oranges:
             return - 1
-        return  max_level
+        return max_level
 
 
 if __name__ == '__main__':
