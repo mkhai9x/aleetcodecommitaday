@@ -1,8 +1,19 @@
-from heapq import *
 from typing import List
+import heapq
+from collections import Counter
+
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-      heapify(nums)
-      print(nums)
+        frequently = Counter(nums)
+        array = [(-(value), key) for key, value in frequently.items()]
 
-solution = Solution().topKFrequent([6, 7, 9, 4, 3, 5, 8, 10, 1], 3)
+        heapq.heapify(array)
+
+        top_k = [heapq.heappop(array)[1] for _ in range(k)]
+
+        print(top_k)
+        return top_k
+
+
+solution = Solution().topKFrequent([1, 1, 1, 2, 2, 3], 2)
