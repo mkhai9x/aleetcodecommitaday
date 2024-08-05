@@ -10,17 +10,12 @@ class Solution:
         left, right = 0, 0
         longest_substring = 0
         while right < len(s):
-            if s[right] not in track_set:
-                # we extend the window
-                track_set.add(s[right])
-                current_length = right - left + 1
-                longest_substring = max(longest_substring, current_length)
-            else:
-                # remove all the char up to the current duplicated character
-                while s[right] in track_set:
-                    track_set.remove(s[left])
-                    left += 1
-                track_set.add(s[right])
+            while s[right] in track_set:
+                track_set.remove(s[left])
+                left += 1
+            track_set.add(s[right])
+            current_length = right - left + 1
+            longest_substring = max(longest_substring, current_length)
             right += 1
         return longest_substring
 
