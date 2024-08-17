@@ -7,7 +7,6 @@ class Solution:
         """
         Do not return anything, modify rooms in-place instead.
         """
-        infinity = 2147483647
         rows = len(rooms)
         cols = len(rooms[0])
 
