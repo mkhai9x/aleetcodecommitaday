@@ -19,7 +19,7 @@ class Solution:
             while queue:
                 curr = queue.popleft()
                 row, col = curr[0], curr[1]
-                curr_heigh = heights[row][col]
+                curr_height = heights[row][col]
 
                 for direction in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                     drow = row + direction[0]
@@ -36,7 +36,7 @@ class Solution:
                         continue
 
                     height = heights[drow][dcol]
-                    if height <= curr_heigh:
+                    if height <= curr_height:
                         queue.append((drow, dcol))
 
                         visited.add((drow, dcol))
