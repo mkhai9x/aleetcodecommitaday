@@ -53,4 +53,4 @@ board = [
     ["X", "X", "X", "O"],
 ]
 
-print(Solution().solve(board))
+Solution().solve(board)
